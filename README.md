@@ -27,3 +27,19 @@
 ##### kubectl -n kubernetes-dashboard delete serviceaccount admin-user
 ##### kubectl -n kubernetes-dashboard delete clusterrolebinding admin-user
 
+
+
+##### kubectl run app-kuber-1 --image=bokovets/kuber:0.1 --port=8000
+#### kubectl exec -it app-kuber-1 -- /bin/bash
+
+##### kubectl exec -it app-kuber-1 --container app-kuber-1 --  /bin/bash
+##### kubectl apply -f kuber-pod.yaml
+
+##### kubectl get pod app-kuber-2 -o yaml
+##### kubectl port-forward app-kuber-1 11111:8000
+##### kubectl logs app-kuber-1
+#####  kubectl get po --show-labels
+##### kubectl delete po app-kuber-2
+
+##### kubectl create deployment kuber-ctl-app --image=bokovets/kuber --port=8000 -replicas=3
+##### kubectl delete -n default deployment kuber-ctl-app
